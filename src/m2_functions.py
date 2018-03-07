@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -20,7 +20,6 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 
 import rosegraphics as rg
 import random
-
 
 def main():
     """
@@ -35,6 +34,7 @@ def main():
     turtle3()
     turtle2()
     turtle2()
+    turtle4()
 
     window.close_on_mouse_click()
 
@@ -45,7 +45,7 @@ def turtle1():
     Makes that SimpleTurtle draw a yellow-filled circle.
     """
     ada = rg.SimpleTurtle('square')
-    ada.speed = 10
+    ada.speed = 5
 
     ada.pen = rg.Pen('aquamarine', 30)
     ada.paint_bucket = rg.PaintBucket('yellow')
@@ -62,7 +62,7 @@ def turtle2():
     draws a cool shape, and return to where it started from.
     """
     grace = rg.SimpleTurtle('triangle')
-    grace.speed = 7
+    grace.speed = 5
 
     grace.pen = rg.Pen('blue', 15)
     grace.paint_bucket = rg.PaintBucket('magenta')
@@ -94,7 +94,7 @@ def turtle3():
     and then draw a black-filled circle.
     """
     maja = rg.SimpleTurtle()
-    maja.speed = 10
+    maja.speed = 5
     maja.pen = rg.Pen('black', 10)
 
     maja.forward(300)
@@ -103,10 +103,22 @@ def turtle3():
     maja.draw_circle(50)
     maja.end_fill()
 
+def turtle4():
+
+    colleen = rg.SimpleTurtle()
+    colleen.speed = 5
+    colleen.pen = rg.Pen('gold', 10)
+
+    colleen.backward(100)
+    colleen.left(90)
+    colleen.forward(100)
+    colleen.right(90)
+    colleen.forward(100)
+
 
 ###############################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   READ the code above.  Be sure you understand:
 #     -- How many functions are defined above?
 #           (Answer: 4)
@@ -116,7 +128,7 @@ def turtle3():
 #     -- How many times does   main   call the   turtle1   function?
 #            (Answer: 1)
 #     -- How many times does   main   call the   turtle2   function?
-#            (Hint: the answer is NOT 1.)
+#            (Answer: 2)
 #     -- What line of code calls the   main   function?
 #            (Answer: look at the LAST line of this module, far below.)
 #
@@ -138,7 +150,7 @@ def turtle3():
 
 ###############################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
