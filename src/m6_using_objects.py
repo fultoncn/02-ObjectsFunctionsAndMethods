@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,9 +14,28 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    two_circles()
+    circle_and_rectangle()
+    lines()
 
 
 def two_circles():
+
+    window = rg.RoseWindow(200, 200)
+    barb = rg.SimpleTurtle()
+    barb.pen = rg.Pen('blue', 12)
+    barb.draw_circle(60)
+
+    barb.pen_up()
+    barb.forward(200)
+    barb.pen_down()
+    barb.paint_bucket = rg.PaintBucket('red')
+    barb.begin_fill()
+    barb.draw_circle(40)
+    barb.end_fill()
+
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -27,7 +46,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -36,12 +55,37 @@ def two_circles():
 
 
 def circle_and_rectangle():
+
+    window = rg.RoseWindow(200, 200)
+
+    point1 = rg.Point(50, 50)
+    point2 = 30
+    circle = rg.Circle(point1, point2)
+    print('Centered at', point1)
+    print('Radius of', point2)
+    circle.fill_color = 'blue'
+    circle.outline_thickness = 5
+    print('The Color is', circle.fill_color)
+    print('The Circle Thickness is', circle.outline_thickness)
+    circle.attach_to(window)
+
+    point3 = rg.Point(100, 150)
+    print('First corner is at', point3)
+    point4 = rg.Point(200, 50)
+    print('Second corner is at', point4)
+    rectangle = rg.Rectangle(point3, point4)
+    rectangle.attach_to(window)
+
+    window.render()
+
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
        on the window such that:
-          -- They fit in the window and are easily visible.
-          -- The rg.Circle is filled with 'blue'
+          -- They fit in the window and are easily visible.X
+          -- The rg.Circle is filled with 'blue'X
     -- Prints (on the console, on SEPARATE lines) the following data
          associated with your rg.Circle:
           -- Its outline thickness.
@@ -67,7 +111,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -78,14 +122,34 @@ def circle_and_rectangle():
 
 
 def lines():
+    window = rg.RoseWindow(400, 400)
+
+    start = rg.Point(100, 150)
+    end = rg.Point(300, 150)
+    line = rg.Line(start, end)
+    line.attach_to(window)
+    line.color = 'blue'
+    line.thickness = 12
+    start = rg.Point(200, 250)
+    end = rg.Point(200, 50)
+    line = rg.Line(start, end)
+    line.attach_to(window)
+    print('midpoint = (200,150)')
+    print('x = 200')
+    print('y = 150')
+    window.render()
+
+    window.close_on_mouse_click()
+
+
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
-          -- They both fit in the window and are easily visible.
-          -- One rg.Line has the default thickness.
-          -- The other rg.Line is thicker (i.e., has a bigger width).
+          -- They both fit in the window and are easily visible.X
+          -- One rg.Line has the default thickness.X
+          -- The other rg.Line is thicker (i.e., has a bigger width).X
     -- Uses a rg.Line method to get the midpoint (center) of the
-         thicker rg.Line.
+         thicker rg.Line.X
     -- Then prints (on the console, on SEPARATE lines):
          -- the midpoint itself
          -- the x-coordinate of the midpoint

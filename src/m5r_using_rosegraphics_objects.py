@@ -83,7 +83,6 @@ def main():
     example2()
     example3()
 
-
 def example1():
     """ Displays an empty window. """
     window = rg.RoseWindow(500, 300, 'Example 1: An empty window')
