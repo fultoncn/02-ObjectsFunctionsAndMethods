@@ -5,61 +5,61 @@ This module uses ROSEGRAPHICS to demonstrate:
   -- accessing their DATA via INSTANCE VARIABLES.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   RUN this program.  Then answer the following,
 #     GETTING HELP AS NEED! (Ask questions!!!)
 #
 #     a. For the RoseGraphics coordinate system:
 #
 #        -- Where is the (0, 0) point on the screen?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#              This is the origin, or center of the screen.
 #
 #        -- In what direction on the screen does the positive X-axis point?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#              It points right.
 #
 #        -- In what direction on the screen does the positive Y-axis point?
-#              WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
-#
+#              It points upward.
+
 #     b. Write a line of code that constructs a basic RoseWindow object:
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            window = rg.RoseWindow()
 #
 #     c. What is the default height of a RoseWindow?
 #          Type into  main  the code shown in your answer above.  That will
 #          ask PyCharm will help you figure out the answer to this question.
 #          Hint: After you type the   (   in the line of code,
 #          if you wait a moment PyCharm will add the   )   and has a popup.
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            400 in width by 300 in height.
 #
 #     d. Write a line of code that constructs a RoseWindow object whose
 #        height is 100 with any width you choose.
 #           Again try to use PyCharm's hints to help you figure this out.
-#               WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#               window = rg.RoseWindow(50,100)
 #
 #     e. Use the DOT trick to answer the following:
 #
 #          -- Write the names of two types of graphics objects
 #             that you can construct OTHER than Circle and Point:
-#                WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#                Squares and Rectangles
 #
 #          -- Write the names of three METHODs that Circle objects have:
 #               Hint: Use the circle from the  example3  function below with
 #               the dot trick to let PyCharm help you.
-#                  WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#                 .fill_color, .attach_to, .clone
 #
 #          -- Write the names of three INSTANCE VARIABLEs
 #             that Circle objects have:
-#                WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#               Instance Variables can be used to fill the circle or define the center, radius of that circle.
 #
 #     f. What does a RoseWindow RENDER method do?
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
-#
+#            Rose graphics are not associated with a window until being attached with a render.
+##
 #     g. When is a RoseWindow close_on_mouse_click method call necessary?  Why?
-#            WRITE_YOUR_ANSWER_HERE,_REPLACING_THIS
+#            A lot of steps that happen quickly. Will keep the window open until the user clicks on the screen.
 #
 #   ASK QUESTIONS ** NOW ** if you do not understand how the
 #     RoseGraphics graphics system works.
@@ -71,7 +71,6 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 
 import rosegraphics as rg
-
 
 def main():
     """
